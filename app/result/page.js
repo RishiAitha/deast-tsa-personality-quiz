@@ -61,14 +61,16 @@ const events = [
 const ResultPage = () => {
   const [matches, setMatches] = useState([]);
   const [showAll, setShowAll] = useState(false);
-  const userProfile = JSON.parse(localStorage.getItem('userProfile'));
+  const [displayProfile, setDisplayProfile] = useState([]);
 
   useEffect(() => {
+    const userProfile = JSON.parse(localStorage.getItem('userProfile'));
+    setDisplayProfile(userProfile);
     if (userProfile) {
       const sortedMatches = calculateMatches(userProfile, events);
       setMatches(sortedMatches);
     }
-  }, [setMatches, userProfile]);
+  }, [setMatches, setDisplayProfile]);
 
   const handleRetakeQuiz = () => {
     setTimeout(() => {
@@ -86,9 +88,9 @@ const ResultPage = () => {
   return (
     <div className={stylesRP.container}>
       <h1 className={`${stylesRP.title} ${ubuntu_mono.className} antialiased`}>Your Top 5 Best Matches</h1>
-      {userProfile ? (
+      {displayProfile ? (
         <Graph
-        profile={userProfile}
+        profile={displayProfile}
         />
       ) : (
         <div></div>
