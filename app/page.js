@@ -18,7 +18,7 @@ const HomePage = () => {
     }, 500)
   };
 
-  const letterEffect = (element) => { // this is stolen from Hyperplexed
+  const letterEffect = (element) => {
     let iterations = 0;
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const interval = setInterval(() => {

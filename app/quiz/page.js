@@ -135,7 +135,7 @@ const QuizPage = () => {
     }, 500)
   };
 
-  const letterEffect = (element) => { // this is stolen from Hyperplexed
+  const letterEffect = (element) => {
     let iterations = 0;
     const letters = "abcdefghijklmnopqrstuvwxyz?!@#$%^&*()_-+=";
     const interval = setInterval(() => {
