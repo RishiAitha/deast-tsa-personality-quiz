@@ -68,7 +68,7 @@ const ResultPage = () => {
       const sortedMatches = calculateMatches(userProfile, events);
       setMatches(sortedMatches);
     }
-  }, []);
+  }, [setMatches, userProfile]);
 
   const handleRetakeQuiz = () => {
     setTimeout(() => {
