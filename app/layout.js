@@ -4,6 +4,9 @@ import { josefin_sans, ubuntu_mono } from '@/app/ui/fonts';
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>TSA Event Selection Personality Quiz</title>
+      </head>
       <body>
         {children}
         <footer className={`${ josefin_sans.className } antialiased`}>
